@@ -1,0 +1,86 @@
+
+  <md-toolbar md-scroll-shrink ng-if="true" ng-controller="ToolbarCtrl">
+    <div class="md-toolbar-tools">
+      <h3>
+        <span class="md-display-2" style="padding-left: 35px;">{{title}}</span>
+      </h3>
+      <span flex></span>
+	  <md-button ng-hide="signedIn() || isOpenLogin()" aria-label="Log In" ng-click="toggleLogin()">
+	      Log In
+	  </md-button>
+	  <md-button ng-hide="signedIn() || isOpenRegister()" aria-label="Register" ng-click="toggleRegister()">
+	      Register
+	  </md-button>
+      <md-button ng-show="signedIn()" aria-label="Go Back">
+          {{ user.email }}
+      </md-button>
+      <md-button ng-show="signedIn()" aria-label="Go Back" ng-click="logout()">
+          Log Out
+      </md-button>
+    </div>
+  </md-toolbar>
+<!--sidenav REGISTER-->
+<div ng-controller="RegisterCtrl" >
+   <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="register" >
+      <md-toolbar class="md-theme-light">
+        <div class="md-toolbar-tools">
+          <h1 class="md-subhead">{{ formHead }}</h1>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="close()">
+            <md-icon md-font-set="material-icons">clear</md-button>
+        </div>
+      </md-toolbar>
+      <md-content layout-padding>
+        <form ng-submit="register()">
+          <md-input-container>
+            <label for="email">E-mail: (required)</label>
+            <input type="email" name="email" id="email"
+                   ng-model="user.email" md-autofocus ng-required="true" ng-pattern="/^.+@.+\..+$/">
+          </md-input-container>
+          <md-input-container>
+            <label for="pswrd">Password: (required)</label>
+            <input type="text" name="pswrd" id="pswrd"
+                   ng-model="user.password" md-autofocus ng-required="true" ng-pattern="/^[\w\d]{6,}$/">
+          </md-input-container>
+        <div>
+          <md-button type="submit" class="md-primary">Submit</md-button>
+        </div>
+        </form>
+        {{ user }}
+      </md-content>
+   </md-sidenav>
+   </div>
+<!--END of sidenav REGISTER-->
+<!--sidenav LOG IN-->
+  <div ng-controller="LoginCtrl">
+   <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="login">
+      <md-toolbar class="md-theme-light">
+        <div class="md-toolbar-tools">
+          <h1 class="md-subhead">{{ formHead }}</h1>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="close()">
+            <md-icon md-font-set="material-icons">clear</md-button>
+        </div>
+      </md-toolbar>
+      <md-content layout-padding>
+        <form ng-submit="login()">
+          <md-input-container>
+            <label for="email">E-mail: (required)</label>
+            <input type="email" name="email" id="email"
+                   ng-model="user.email" md-autofocus ng-required="true" ng-pattern="/^.+@.+\..+$/">
+          </md-input-container>
+          <md-input-container>
+            <label for="pswrd">Password: (required)</label>
+            <input type="text" name="pswrd" id="pswrd"
+                   ng-model="user.password" md-autofocus ng-required="true" ng-pattern="/^[\w\d]{6,}$/">
+          </md-input-container>
+        <div>
+          <md-button type="submit" class="md-primary">Submit</md-button>
+        </div>
+        </form>
+      </md-content>
+   </md-sidenav>
+   </div>
+<!--END of sidenav LOG IN-->
+
+  
