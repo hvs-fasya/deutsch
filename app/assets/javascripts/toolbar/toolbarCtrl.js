@@ -4,7 +4,7 @@
   .controller('ToolbarCtrl',
 
       function ($scope, $mdSidenav, $log, $state, Auth, $mdToast) {
-          $scope.title = 'Duetsch';
+          $scope.title = 'Deutsch';
           $scope.signedIn = Auth.isAuthenticated;
           $scope.logout = Auth.logout;
           Auth.currentUser().then(function (user){

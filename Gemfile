@@ -42,6 +42,15 @@ gem 'bower-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'json_spec'
+  gem 'capybara-angular'
 end
 
 group :development do
