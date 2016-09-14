@@ -1,3 +1,4 @@
+console.log('NavbarCtrl');
 (function() {
   'use strict';
   angular.module('navbar', ['ngMaterial'])

@@ -1,3 +1,4 @@
+console.log('ToolbarCtrl');
 (function() {
   'use strict';
   angular.module('toolbar', ['ngMaterial'])

@@ -2,22 +2,23 @@
 <html>
 <head>
   <title>Deutsch</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'app', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'auth/authCtrl', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'toolbar/toolbarCtrl', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="/assets/toolbar/toolbarCtrl.js"></script>
 </head>
 <body ng-app="deutsch" ng-controller="MainCtrl" layout="column" ng-cloak>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <div ng-controller="AuthCtrl">
-    <div ng-include="'toolbar/_toolbar.html'"></div>
+    <div ng-include="'assets/toolbar/_toolbar.html'"></div>
   </div>
 
-  <md-content class="md-padding">
-    <div ng-include="'navbar/_navbar.html'"></div>
-    <ui-view></ui-view>
-  </md-content>
   <div style="float:right; width:30%;" id='toast'></div>
 
 </body>

@@ -1,10 +1,6 @@
 
-	angular
-            .module('deutsch', ['ui.router', 'templates', 'Devise','ngMaterial',
-            											'navbar',
-            											'toolbar',
-            											'auth'])
-            .config(
+console.log('deutsch.confif');
+    deutsch.config(
               function($mdThemingProvider, $mdIconProvider){
                   $mdIconProvider
                       .defaultIconSet("./assets/svg/avatars.svg", 128)

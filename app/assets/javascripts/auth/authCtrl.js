@@ -1,3 +1,4 @@
+console.log('AuthCtrl');
 (function() {
   'use strict';
 
